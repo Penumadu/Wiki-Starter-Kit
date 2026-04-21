@@ -1,28 +1,54 @@
-# Start Here: Your AI Navigation Guide
+# Welcome to AI Schools
 
-**Summary:** Welcome to your core hub for mastering Claude and Perplexity AI—your two most powerful digital co-workers.
+Learn how to master **Claude** by Anthropic and **Perplexity AI** — the two most powerful AI tools of 2026. This step-by-step tutorial will take you from complete beginner to power user.
 
-**The "Non-Tech" Translation:**
-Think of AI tools like a master chef and a master librarian. Perplexity is the librarian—it runs into the archives, finds the exact facts, and brings back the sources. Claude is the chef—you hand it raw ingredients (facts, code, ideas) and it cooks up a masterpiece.
+## What You Will Learn
 
-### Use Case Samples for Beginners
-
-Not sure where to start? Check out these common scenarios to see how the tools complement each other:
-
-| Category | The "New Person" Use Case | Which Tool? |
+| Module | Topics | Lessons |
 | :--- | :--- | :--- |
-| **Real Estate** | "Find the new 2026 HST Rebate rules in Ontario and draft an email to a client explaining them." | **Perplexity** (Research) + **Claude** (Drafting) |
-| **Learning** | "I have a 50-page PDF on AI-102. Summarize it and create a 10-question practice quiz." | **Claude** (Using Projects/Docs) |
-| **Shopping** | "Find the best 4K projector under $1500 available in Burlington stores today and compare 3 models." | **Perplexity** (Real-time stock/local search) |
+| **Claude Desktop** | Artifacts, Projects, MCP, Claude Code, Workflows | 6 lessons |
+| **Perplexity Desktop** | Pro Search, Computer Agent, Model Council, Collections, Pages | 5 lessons |
+| **Mastery Workflows** | The AI Sandwich, Real-World Use Cases | 2 lessons |
 
-### Steps to Get Started
+## Claude vs. Perplexity — At a Glance
 
-1. **Install the Desktop Apps:** Both Claude and Perplexity have dedicated desktop applications for Mac/Windows in 2026. Download them to keep them outside your messy browser tabs.
-2. **Set Up Your Profiles:** Take 5 minutes to fill out the "Custom Instructions" or "Profile" settings in both tools so they know who you are and what you care about.
-3. **Try the Sandwich:** Try your first "AI Sandwich" workflow (explained in the Workflow section) by combining both tools to solve a single problem.
+| Capability | Claude (Anthropic) | Perplexity AI |
+| :--- | :--- | :--- |
+| **Best for** | Writing, coding, reasoning, analysis | Real-time search, fact-checking, discovery |
+| **Data source** | Your uploaded files + training data | Live internet + 20+ AI models |
+| **Citations** | Only from files you provide | Every claim is cited with a source URL |
+| **Context window** | 200,000+ tokens (entire codebases) | Optimized for search relevance |
+| **Unique power** | Artifacts, Projects, MCP, Computer Use | Pro Search, Model Council, Pages |
+| **Pricing** | Free tier / Pro $20/mo / Max $100/mo | Free tier / Pro $20/mo / Max $200/mo |
 
-**The "Aha!" Moment:**
-Imagine researching a specific tech stock on Perplexity to get live earnings data, and then having Claude immediately format that data into a stunning, client-ready investment summary.
+## How to Think About These Tools
 
-**Next Action:**
-Head over to the **Workflow** section and read about the **AI Sandwich** to learn the foundational technique of modern AI usage.
+> **Expert Tip:** Don't think of Claude and Perplexity as competitors. Think of them as a **Creator** (Claude) and a **Researcher** (Perplexity). Claude builds, writes, and reasons. Perplexity finds, verifies, and cites. Together, they are unstoppable.
+
+## Real-World Scenarios
+
+| Scenario | What You Need | Best Approach |
+| :--- | :--- | :--- |
+| "Find 2026 HST Rebate rules and draft a client email" | Research + Writing | **Perplexity** → finds rules with citations → **Claude** → drafts the email |
+| "Summarize a 50-page PDF and create a quiz" | Document analysis | **Claude** → upload to Projects, ask questions |
+| "Compare 4K projectors under $1500 at local stores" | Live product search | **Perplexity** → real-time pricing and availability |
+| "Debug a React app crashing on mobile Safari" | Code analysis | **Claude** → paste error + code, get fix with explanation |
+| "Write a market research report on AI in healthcare" | Research + Long-form | **Perplexity** → gather 20 sources → **Claude** → write the 3000-word report |
+
+## Getting Started — Your First 10 Minutes
+
+1. **Install both apps** — Download [Claude Desktop](https://claude.ai/download) and [Perplexity Desktop](https://perplexity.ai/download) on your Mac or Windows machine.
+2. **Set up your profile** — In Claude, go to Settings → Profile and describe your role. In Perplexity, set your "AI Profile" with your interests and expertise.
+3. **Try a simple task** — Ask Claude: *"Explain quantum computing to a 10-year-old in 3 sentences."* Then ask Perplexity: *"What are the latest breakthroughs in quantum computing this week?"*
+4. **Notice the difference** — Claude gives you a creative, well-crafted explanation. Perplexity gives you today's news with source links. That's the fundamental difference.
+
+## Navigate This Course
+
+Use the **sidebar** on the left to move through the lessons in order. Each lesson includes:
+- **Clear explanations** of what the feature does
+- **Step-by-step instructions** to set it up
+- **Example prompts** you can copy and try immediately
+- **Pro tips** from real-world power users
+- **Quizzes** to test your knowledge
+
+Click **"Next"** below to begin with the Cheat Sheet →

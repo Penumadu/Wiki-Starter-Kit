@@ -1,29 +1,64 @@
----
-tags: [#Automation, #Dev, #OSControl]
----
+# Claude Code & Computer Use
 
-# Claude Code & Computer Use: Controlling the OS
+Claude Code and Computer Use represent the highest level of agentic AI. Instead of just giving you answers, Claude takes control of your terminal or operating system to solve problems autonomously.
 
-**Summary:** Claude Code is a terminal interface and desktop feature that allows Claude to run commands, edit files, and take control of your operating system to solve complex problems.
+## What is Claude Code?
 
-**The "Non-Tech" Translation:**
-Imagine you have a "Ghost in the Machine." Instead of you typing commands into your terminal or moving the mouse, you just tell the Ghost: "Go fix the bug in my login screen," and it does the work for you by moving the cursor and typing the code.
+Claude Code is an agentic coding tool that lives in your terminal or Claude Desktop app. It understands your codebase, helps you execute tasks, and can write, test, and commit code entirely on its own.
 
-### 2026 Feature: Agentic OS Control
-Claude can now perform **Computer Use** across all native apps. It doesn't just write code; it can open Slack, check a message from your boss, open VS Code, fix the bug, and then push the code to GitHub.
+> **Expert Tip:** Imagine having a senior developer sitting next to you with their hands on your keyboard. You tell them what you want, and they type out the code, run the tests, fix any errors, and commit the changes. That's Claude Code.
 
-### Steps to Use Claude Code
+## Key Capabilities
 
-1. **Launch the Interface:** Open your terminal and type `claude` (if installed) or use the "Computer Use" mode in the Desktop app.
-2. **Grant Permissions:** Your OS will ask for permission to control your screen. **Supervise this closely.**
-3. **Set a Task:** Give it a complex task. E.g., "Find all images in my Downloads folder larger than 5MB and move them to a new folder called 'Large Images'."
-4. **Review & Approve:** Claude will show you what it's about to do. Click "Approve" for each step or use "Auto Mode" if you trust the workflow.
+| Feature | What It Does | Why It's Powerful |
+| :--- | :--- | :--- |
+| **Code Generation** | Writes code across multiple files | Builds complete features, not just snippets |
+| **Bug Fixing** | Reads errors, traces logic, writes fixes | Understands context spanning thousands of lines |
+| **Command Execution** | Runs terminal commands (`npm install`, `pytest`) | Verifies its own work before presenting it |
+| **Git Integration** | Creates branches, commits, PRs | Automates the entire development lifecycle |
 
-**The "Aha!" Moment:**
-Asking Claude to "Refactor my entire directory structure to be more logical" and watching it move hundreds of files and update their internal links in under 60 seconds.
+## Computer Use (Agentic OS Control)
 
-**Pro-Tip:**
-Use `/ultrareview` in Claude Code to have the AI perform a deep, multi-file audit of your changes before you commit them to Git.
+In late 2024, Anthropic introduced Computer Use. In 2026, it's fully integrated into Claude Desktop. This means Claude can:
+1. **Look at your screen** (take screenshots)
+2. **Move your mouse**
+3. **Click buttons**
+4. **Type text**
 
-**Next Action:**
-Try a simple command: "List the last 5 files I modified on my Desktop."
+**Example:** You can ask Claude to "Open Excel, find the Q3 revenue spreadsheet, create a pivot table of sales by region, and email the chart to my manager." Claude will literally open Excel, click the menus, create the table, open your email client, and draft the message.
+
+## How to Start Claude Code
+
+1. **Install:** Run `npm install -g @anthropic-ai/claude-code`
+2. **Authenticate:** Run `claude auth`
+3. **Launch:** Navigate to your project folder and type `claude`
+4. **Command:** Give it a task.
+
+```text
+[TRY IT]
+Analyze my project structure. Find all components that are not currently being imported by any other file, and list them. Then, ask me if you should delete them.
+```
+
+## The `/ultrareview` Command
+
+One of the most powerful features of Claude Code in 2026 is `/ultrareview`.
+
+Before you commit any code, run `/ultrareview`. Claude will:
+1. Read all your staged changes.
+2. Cross-reference them against your entire codebase.
+3. Look for edge cases, security vulnerabilities, and performance bottlenecks.
+4. Suggest or automatically apply fixes.
+
+## Safety & Permissions
+
+Because Claude Code and Computer Use have actual control over your machine, safety is paramount:
+
+- **Approval Gates:** By default, Claude asks for permission before running any command or clicking any button.
+- **Auto Mode:** If you trust the workflow, you can enable Auto Mode for specific tasks, but it's recommended to supervise complex operations.
+- **Sandboxing:** Run Claude Code in Docker containers if you are working with untrusted code.
+
+## Common Mistakes
+
+- **Asking for too much at once** — Don't ask Claude to "build a Facebook clone." Ask it to "scaffold the login page and user authentication."
+- **Ignoring the approvals** — Read what Claude is about to execute before hitting 'Yes'.
+- **Forgetting context** — Tell Claude *where* to look. "Fix the bug in `src/utils/math.js`" is better than "Fix the bug."

@@ -1,24 +1,52 @@
-# The AI Sandwich: The Ultimate Workflow
+# The AI Sandwich Method
 
-**Summary:** The AI Sandwich is the foundational workflow of modern AI use: Use Perplexity to gather the facts, Claude to synthesize and write, and Perplexity again to verify and cite.
+If there is only one thing you take away from AI Schools, it should be the **AI Sandwich**. This is the fundamental workflow that separates AI beginners from power users.
 
-**The "Non-Tech" Translation:**
-Think of building a house. Perplexity is the supplier who delivers the bricks and lumber to the site. Claude is the architect and builder who actually constructs the house. Then, Perplexity is the building inspector who comes back at the end to make sure everything is up to code.
+## The Problem with Using Just One Tool
 
-### Context-Aware Recommendations
-Never ask Claude to "research" current events, as it might hallucinate (make things up) to fill in the gaps of its training data. Never ask Perplexity to write a 10-page creative ebook, as it is optimized for short, factual answers. You must use both.
+- **If you only use Claude:** It writes beautifully and codes perfectly, but if you ask it for current events or niche facts, it might "hallucinate" (confidently make things up) because it doesn't have live internet access by default.
+- **If you only use Perplexity:** It finds the exact facts with citations, but its writing style can be dry, and it struggles to generate complex code, format long essays, or adopt highly specific personas.
 
-### Steps to Make the Sandwich
+## The Solution: The Sandwich
 
-1. **Step 1: The Bread (Perplexity)**
-   Open Perplexity and ask it to find the raw data. E.g., "Find the latest studies from 2026 on the health benefits of matcha tea. Provide the text and the links."
-2. **Step 2: The Meat (Claude)**
-   Copy the entire output from Perplexity (including the source links). Open Claude and say: "Using ONLY the text provided below, write a fun, engaging newsletter for my coffee shop customers about why we are introducing matcha." Paste the text.
-3. **Step 3: The Bread (Perplexity - Optional)**
-   If Claude makes a specific claim in the newsletter that you aren't sure about, copy that sentence, put it back into Perplexity, and say: "Verify this claim and find a source."
+The AI Sandwich combines the strengths of both tools while eliminating their weaknesses.
 
-**The "Aha!" Moment:**
-Realizing that by feeding Claude pre-verified information from Perplexity, you completely eliminate AI "hallucinations" while still getting Claude's incredible writing abilities.
+1. **The Top Bun (Perplexity):** Gather the raw, cited facts.
+2. **The Meat (Claude):** Synthesize, format, and creatively write using *only* those facts.
+3. **The Bottom Bun (Perplexity):** Verify the final output.
 
-**Next Action:**
-Try making your own sandwich right now. Go to Perplexity, find the plot summary of the latest movie in theaters, and then paste it into Claude and ask it to rewrite the summary as a Shakespearean sonnet.
+> **Expert Tip:** Think of building a house. Perplexity is the supplier who delivers the raw lumber and bricks to the site. Claude is the master architect who builds the house. You need both to get a good result.
+
+## Step-by-Step Execution
+
+### Step 1: Research (Perplexity)
+Go to Perplexity and ask it to find the raw data.
+
+```text
+[TRY IT]
+Use Pro Search to find the 5 most significant changes to the US Tax Code introduced in 2026 regarding small business deductions. Provide the raw facts and the source URLs.
+```
+
+### Step 2: Create (Claude)
+Copy the *entire output* from Perplexity (including the source links). Open Claude and give it a strict set of instructions, pasting the Perplexity data at the bottom.
+
+```text
+[TRY IT]
+You are a friendly, expert CPA writing a newsletter for small business owners.
+Using ONLY the facts provided in the text below, write a 300-word email explaining the new 2026 tax changes. Do not invent any new tax rules. Maintain a reassuring tone.
+
+Here are the facts:
+[PASTE PERPLEXITY OUTPUT HERE]
+```
+
+### Step 3: Verify (Perplexity - Optional but Recommended)
+If Claude's output contains a very specific claim or number that you aren't 100% sure was in the original text, take that sentence, put it back into Perplexity, and ask it to verify.
+
+## Why This Works
+
+By feeding Claude pre-verified information from Perplexity and telling it to use *only* that information, you completely eliminate AI hallucinations. Claude no longer has to guess the facts; it only has to do what it does best: write, format, and structure the data.
+
+## Pro Tips
+
+- **Use Claude Projects:** If you are building a massive sandwich (e.g., researching 10 different topics in Perplexity), save each Perplexity output as a PDF or text file and upload them all into a Claude Project. Then, have Claude write the final report based on the entire Project's knowledge base.
+- **Don't skip Step 1:** Never ask Claude to "research" something unless you are using the Brave Search MCP server. Always use Perplexity to fetch the raw data first.

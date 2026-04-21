@@ -3,59 +3,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Schools | Learn Claude & Perplexity</title>
+    <title>AI Schools | Master Claude & Perplexity AI</title>
+    <meta name="description" content="The definitive learning platform for mastering Claude by Anthropic and Perplexity AI. Step-by-step tutorials, interactive playgrounds, and real-world use cases.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="tutorial-layout">
-    <button class="mobile-toggle" id="mobile-toggle"><i class="ph ph-list"></i></button>
-
-    <nav id="sidebar">
-        <div class="logo">
-            <i class="ph-fill ph-graduation-cap"></i>
-            <span>AI Schools</span>
+<body>
+    <!-- Top Bar -->
+    <header id="topbar">
+        <div class="topbar-left">
+            <button id="mobile-toggle" class="topbar-btn"><i class="ph ph-list"></i></button>
+            <a href="#pages/intro.md" class="topbar-logo">
+                <i class="ph-fill ph-graduation-cap"></i>
+                <span>AI Schools</span>
+            </a>
         </div>
-        
-        <div class="progress-container">
-            <div class="progress-bar-bg">
-                <div id="progress-fill" class="progress-bar-fill" style="width: 0%"></div>
+        <div class="topbar-center">
+            <a href="#pages/intro.md" class="topbar-link active" data-tab="tutorials">Tutorials</a>
+            <a href="#playground" class="topbar-link" data-tab="playground" onclick="openPlayground()">Playground</a>
+            <a href="#pages/cheat-sheet.md" class="topbar-link" data-tab="reference">Reference</a>
+        </div>
+        <div class="topbar-right">
+            <div class="progress-pill">
+                <div class="progress-pill-fill" id="progress-fill"></div>
+                <span id="progress-text">0%</span>
             </div>
-            <span id="progress-text">0% Complete</span>
         </div>
+    </header>
 
-        <div id="nav-content">
-            <!-- Curriculum will be injected here -->
+    <!-- Sidebar -->
+    <nav id="sidebar">
+        <div class="sidebar-search">
+            <i class="ph ph-magnifying-glass"></i>
+            <input type="text" id="search-input" placeholder="Search lessons...">
         </div>
+        <div id="nav-content"></div>
     </nav>
 
+    <!-- Main Content -->
     <main id="content-area">
-        <div class="tutorial-header">
-            <div class="breadcrumb" id="breadcrumb">Course / Lesson</div>
-            <div class="nav-controls-top">
-                <button class="btn-nav prev" onclick="navigatePage(-1)"><i class="ph ph-caret-left"></i> Previous</button>
-                <button class="btn-nav next" onclick="navigatePage(1)">Next <i class="ph ph-caret-right"></i></button>
-            </div>
+        <div class="lesson-header" id="lesson-header">
+            <div class="breadcrumb" id="breadcrumb"></div>
         </div>
-        
+
         <article id="markdown-viewer">
-            <div class="loading">
-                <i class="ph ph-circle-notch ph-spin"></i>
-                <span>Loading Tutorial...</span>
+            <div class="loading-state">
+                <div class="spinner"></div>
+                <span>Loading lesson...</span>
             </div>
         </article>
 
-        <div class="nav-controls-bottom">
-            <button class="btn-nav prev" onclick="navigatePage(-1)"><i class="ph ph-caret-left"></i> Previous Lesson</button>
-            <button class="btn-nav next" onclick="navigatePage(1)">Next Lesson <i class="ph ph-caret-right"></i></button>
+        <!-- Playground (hidden by default) -->
+        <div id="playground-area" style="display: none;">
+            <h1>Prompt Playground</h1>
+            <p class="playground-desc">Practice writing prompts for Claude and Perplexity. Type your prompt, select the tool, and see example outputs.</p>
+            
+            <div class="playground-grid">
+                <div class="playground-input-panel">
+                    <div class="playground-toolbar">
+                        <select id="playground-tool">
+                            <option value="claude">Claude</option>
+                            <option value="perplexity">Perplexity</option>
+                        </select>
+                        <select id="playground-template">
+                            <option value="">— Choose a Template —</option>
+                            <option value="summarize">Summarize a Document</option>
+                            <option value="debug">Debug Code</option>
+                            <option value="research">Deep Research</option>
+                            <option value="email">Draft an Email</option>
+                            <option value="compare">Compare Options</option>
+                        </select>
+                    </div>
+                    <textarea id="playground-prompt" placeholder="Type your prompt here... &#10;&#10;Example: Summarize the key differences between MCP and traditional API integrations in 5 bullet points."></textarea>
+                    <div class="playground-actions">
+                        <button class="btn-primary" onclick="runPlayground()"><i class="ph ph-play"></i> Simulate Response</button>
+                        <button class="btn-secondary" onclick="copyPlayground()"><i class="ph ph-copy"></i> Copy Prompt</button>
+                        <a class="btn-secondary" id="playground-open-link" href="https://claude.ai" target="_blank"><i class="ph ph-arrow-square-out"></i> Open in Claude</a>
+                    </div>
+                </div>
+                <div class="playground-output-panel">
+                    <div class="output-header">
+                        <span id="output-tool-label">Claude Response Preview</span>
+                    </div>
+                    <div id="playground-output" class="playground-output">
+                        <p class="output-placeholder">Your simulated response will appear here after you click "Simulate Response."</p>
+                        <p class="output-placeholder">This playground helps you practice structuring prompts before using the real tools.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="playground-tips">
+                <h3>Prompt Writing Tips</h3>
+                <div class="tips-grid">
+                    <div class="tip-card">
+                        <i class="ph ph-target"></i>
+                        <h4>Be Specific</h4>
+                        <p>Instead of "Write about AI," try "Write a 500-word blog post about how small businesses can use Claude to automate customer support."</p>
+                    </div>
+                    <div class="tip-card">
+                        <i class="ph ph-user-circle"></i>
+                        <h4>Set a Role</h4>
+                        <p>Start with "Act as a senior data analyst" to set Claude's expertise level and response style.</p>
+                    </div>
+                    <div class="tip-card">
+                        <i class="ph ph-list-checks"></i>
+                        <h4>Define Output</h4>
+                        <p>Tell the AI exactly what format you want: "Respond in a table with columns for Name, Cost, and Rating."</p>
+                    </div>
+                    <div class="tip-card">
+                        <i class="ph ph-arrows-split"></i>
+                        <h4>Give Context</h4>
+                        <p>Provide background info: "I am building a React app for a dentist office. The stack is Next.js + Firebase."</p>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <footer class="content-footer">
-            <p>&copy; 2026 AI Schools. Learn the future of Claude and Perplexity.</p>
+        <!-- Bottom Nav -->
+        <div class="lesson-nav" id="lesson-nav">
+            <button class="btn-lesson-nav prev" onclick="navigatePage(-1)">
+                <i class="ph ph-arrow-left"></i>
+                <div>
+                    <small>Previous</small>
+                    <span id="prev-title">—</span>
+                </div>
+            </button>
+            <button class="btn-lesson-nav next" onclick="navigatePage(1)">
+                <div>
+                    <small>Next</small>
+                    <span id="next-title">—</span>
+                </div>
+                <i class="ph ph-arrow-right"></i>
+            </button>
+        </div>
+
+        <footer class="site-footer">
+            <p>&copy; 2026 AI Schools — The Complete Guide to Claude & Perplexity AI</p>
         </footer>
     </main>
 

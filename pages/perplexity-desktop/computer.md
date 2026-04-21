@@ -1,29 +1,48 @@
----
-tags: [#Browsing, #Agents, #Search]
----
+# Perplexity Computer Agent
 
-# Perplexity Computer: Agentic Browsing
+In 2026, Perplexity evolved from an answer engine to an **Action Engine**. The Perplexity Computer Agent allows the AI to not just find information, but to execute tasks on the web on your behalf.
 
-**Summary:** Perplexity Computer is a cloud-based agent that can navigate the live web, use browser-based tools, and orchestrate over 20 different AI models to solve complex research tasks.
+## What is the Computer Agent?
 
-**The "Non-Tech" Translation:**
-Think of Perplexity Computer like a **"Digital Scout."** While a normal search engine just gives you a map, the Scout actually goes out into the forest, talks to people, explores the caves, and comes back with the actual treasure you were looking for.
+While Pro Search reads text from websites, the Computer Agent spins up a secure, cloud-based browser container. It can literally click buttons, fill out forms, navigate paywalls, and interact with complex web applications just like a human would.
 
-### 2026 Feature: Personal CFO & Plaid
-Perplexity Computer now integrates with **Plaid**, allowing it to act as a "Personal CFO." It can securely log into your bank accounts, track your spending across different platforms, and provide real-time investment advice based on the global market.
+> **Expert Tip:** If you ask Perplexity "What is the cheapest flight to Tokyo?", Pro Search will read travel blogs and give you an estimate. The **Computer Agent** will go to Expedia, fill out the departure and arrival fields, click search, wait for the page to load, and extract the exact live prices.
 
-### Steps to Use Perplexity Computer
+## Core Capabilities
 
-1. **Enable Computer Mode:** Select the "Computer" agent from the model list (available for Max subscribers).
-2. **Give a High-Level Goal:** Don't just search. Give a task. E.g., "Find me a weekend trip for under $500 including flights and a dog-friendly hotel."
-3. **Watch the Orchestration:** Perplexity will launch multiple "Agents" in parallel to browse airline sites, hotel reviews, and local pet ordinances.
-4. **Interact with Results:** The agent will provide a final itinerary with bookable links. You can ask it to "Change the hotel to one with a pool," and it will go back out and search again.
+| Feature | What It Does | Example Use Case |
+| :--- | :--- | :--- |
+| **Deep Web Scraping** | Navigates javascript-heavy, interactive sites | Extracting live stock data from dynamic charts |
+| **Form Filling** | Enters data into search fields or calculators | Running a mortgage calculator on a bank's website |
+| **Authentication** | Securely logs into your connected accounts | Summarizing your unread Gmail messages |
+| **Transactions** | Completes purchases (with approval) | Booking a dinner reservation |
 
-**The "Aha!" Moment:**
-Asking Perplexity to "Manage my flight delay" and watching as it finds a new flight, checks your travel insurance policy, and drafts an email to the airline for a refund—all while you stay in one conversation.
+## The "Personal CFO" Integration
 
-**Pro-Tip:**
-Connect your local Mac files via the **Perplexity Mac App** to allow the Computer agent to combine live web data with your private documents.
+The most popular use of the Computer Agent in 2026 is the **Personal CFO** feature. 
 
-**Next Action:**
-Ask Perplexity: "Look at my recent spending (via Personal CFO) and suggest three ways I can save $100 this month."
+By connecting your financial institutions via Plaid securely within the Perplexity Desktop app, the Computer Agent can analyze your actual financial data.
+
+**How to use it:**
+1. Connect your accounts in Perplexity Settings → Integrations.
+2. Ask a financial question.
+
+```text
+[TRY IT]
+Analyze my credit card spending for the last 30 days. Group the expenses by category. Then, use the web to find 3 subscription services I am paying for that I can get cheaper alternatives for.
+```
+
+Perplexity will use the Computer Agent to read your bank data, identify a $15/mo Netflix subscription, search the web, and suggest a bundled alternative.
+
+## Cloud Agents vs. Local Agents
+
+It's important to understand the difference between Perplexity's Computer Agent and Claude's Computer Use:
+
+- **Perplexity Computer:** Runs in the **cloud**. It is perfect for interacting with public websites, booking flights, and doing web-heavy research. It cannot see your local files or open local apps.
+- **Claude Computer Use:** Runs **locally** on your machine. It can open your local Excel files, run terminal commands, and organize your desktop. 
+
+## Pro Tips
+
+> **Pro-Tip:** Use the Computer Agent for "Comparison Shopping." Ask: *"Use the Computer Agent to go to Amazon and Best Buy. Find the exact price, shipping time, and return policy for the Sony WH-1000XM5 headphones right now."*
+
+> **Warning:** The Computer Agent is powerful. For actions that involve spending money or sending messages, Perplexity will always pause and show you a "Confirm Action" button before proceeding. Never disable this safeguard.

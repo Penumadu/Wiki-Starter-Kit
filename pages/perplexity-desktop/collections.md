@@ -1,26 +1,43 @@
----
-tags: [#Organization, #Collaboration, #Knowledge]
----
+# Collections & Custom AI
 
-# Collections: Collaborative Research
+Collections in Perplexity are not just folders for organizing your searches. They are **Custom AI Environments** tailored to specific topics, with their own custom instructions and default AI models.
 
-**Summary:** Collections are shared folders for your research threads. They allow you to apply specific "Custom Instructions" to all searches within a topic and invite teammates to collaborate.
+## What is a Collection?
 
-**The "Non-Tech" Translation:**
-Think of a Collection as a **"Team Lab Notebook."** Everyone on the team can add their findings to the same book, and you can tell the book: "Always format our notes into a summary at the top of every page."
+When you create a Collection, you are creating a specialized silo of knowledge. Every search you perform inside that Collection inherits specific rules that you define.
 
-### Steps to Mastery
+> **Expert Tip:** Think of a Collection like a "Department" in a company. You have the Legal Department Collection, the Marketing Collection, and the Coding Collection. When you walk into the Legal Department, the AI automatically acts like a lawyer and only searches legal databases.
 
-1. **Create & Tag:** Create a collection (e.g., "Market Trends") and add tags like #Finance or #AI.
-2. **Set Custom Logic:** Add a prompt like: "Always use Academic sources first and provide a summary of the 3 key takeaways."
-3. **Invite Team:** Share the collection link with your colleagues. Any search they run inside this collection will benefit from your custom logic.
-4. **Export to Page:** Click "Create Page" to turn the entire collection of research into a single, published article.
+## Setting Up a Collection
 
-**The "Aha!" Moment:**
-Building a "Competitor Analysis" collection where every search result is automatically formatted into a SWOT analysis table because of your custom instructions.
+1. **Create:** In the left sidebar, click "+ New Collection."
+2. **Name it:** e.g., "Python Development."
+3. **Set the AI Prompt (Crucial Step):** This tells the AI how to behave for every search in this Collection.
 
-**Pro-Tip:**
-Use the **MCP Connector** within a collection to allow Perplexity to cross-reference your live web searches with your private company files.
+```text
+[TRY IT]
+You are a senior Python developer. When I ask a coding question, do not give me long explanations. Give me the raw, optimized Python code first, followed by a maximum of 3 bullet points explaining the logic. Always check StackOverflow and GitHub for the latest patterns.
+```
 
-**Next Action:**
-Create a collection for a project you're working on and add your first "Custom Instruction."
+## Collaborative Collections
+
+In 2026, Perplexity upgraded Collections to be fully collaborative for teams.
+- **Shared Prompts:** The entire team benefits from the same highly-tuned AI prompt.
+- **Shared Threads:** If a junior developer asks a question and gets a great answer, the senior developer can see that thread in the Collection and add follow-up questions.
+- **Document Grounding:** You can upload PDFs or code files directly into the Collection. The AI will search these files *before* searching the public web.
+
+## Claude Projects vs. Perplexity Collections
+
+They sound similar, but they serve different purposes:
+
+| Feature | Claude Projects | Perplexity Collections |
+| :--- | :--- | :--- |
+| **Primary Use** | Working with your private data | Researching the live web with a specific persona |
+| **Data Source** | ONLY the files you upload | The internet + files you upload |
+| **Best For** | Writing, Coding, Deep Analysis | Quick answers, Web research, Fact-checking |
+
+## Pro Tips
+
+> **Pro-Tip:** Create a "Health & Fitness" Collection. Set the prompt to: *"Only provide information verified by peer-reviewed medical journals or the NIH. Ignore all wellness blogs and supplements marketing."* This instantly filters out internet junk for all your health searches.
+
+> **Pro-Tip:** You can pin a Collection to your Perplexity homepage so that it's just one click away when you open the app.
