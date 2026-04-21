@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Wiki Starter Kit | Claude & Perplexity</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <i class="ph-fill ph-brain"></i>
+            <span>AI Wiki</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home" class="active"><i class="ph ph-house"></i> <span>Home</span></a></li>
+            <li><a href="#comparison"><i class="ph ph-scales"></i> <span>Comparison</span></a></li>
+            <li><a href="#getting-started"><i class="ph ph-rocket-launch"></i> <span>Getting Started</span></a></li>
+            <li><a href="#power-user"><i class="ph ph-lightning"></i> <span>Power User</span></a></li>
+            <li><a href="#prompt-library"><i class="ph ph-terminal-window"></i> <span>Prompt Library</span></a></li>
+            <li><a href="#tool-switcher"><i class="ph ph-arrows-left-right"></i> <span>Tool Switcher</span></a></li>
+            <li><a href="#spotlight"><i class="ph ph-star"></i> <span>Feature Spotlight</span></a></li>
+            <li><a href="#news"><i class="ph ph-newspaper"></i> <span>Live News</span></a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="home">
+            <h1>Mastering the <br><span style="color: var(--accent-claude)">Claude</span> + <span style="color: var(--accent-perplexity)">Perplexity</span> Duo</h1>
+            <p>Welcome to the ultimate Wiki Starter Kit. This guide is designed to transform you from an AI beginner into a Power User by leveraging the unique strengths of the world's two most powerful AI tools.</p>
+            
+            <div class="callout expert">
+                <i class="ph ph-info"></i>
+                <div>
+                    <strong>Expert Tip:</strong> Don't think of these as competitors. Think of them as a <strong>Researcher</strong> (Perplexity) and a <strong>Creator/Architect</strong> (Claude).
+                </div>
+            </div>
+        </section>
+
+        <section id="comparison">
+            <h2><i class="ph ph-scales"></i> Core Features Table</h2>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Capability</th>
+                        <th>Claude (Anthropic)</th>
+                        <th>Perplexity AI</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Best For</td>
+                        <td>Coding, Long-form writing, Complex Reasoning</td>
+                        <td>Real-time search, Fact-checking, Discovery</td>
+                    </tr>
+                    <tr>
+                        <td>Source Citations</td>
+                        <td>Limited to training data (unless via Projects)</td>
+                        <td>Real-time web citations for every claim</td>
+                    </tr>
+                    <tr>
+                        <td>Context Window</td>
+                        <td>Industry-leading (up to 200k+ tokens)</td>
+                        <td>Search-optimized (focused on relevance)</td>
+                    </tr>
+                    <tr>
+                        <td>Creative Edge</td>
+                        <td>High instruction fidelity, nuanced tone</td>
+                        <td>Efficient, direct, and information-dense</td>
+                    </tr>
+                    <tr>
+                        <td>Key Feature</td>
+                        <td>Artifacts & Projects</td>
+                        <td>Collections & Pages</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="getting-started">
+            <h2><i class="ph ph-rocket-launch"></i> The "Getting Started" Path</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <h3>Claude: First 30 Mins</h3>
+                    <ol style="margin-left: 1.5rem; margin-top: 1rem;">
+                        <li><strong>Enable Artifacts:</strong> Go to settings and ensure "Artifacts" is on to see code and docs side-by-side.</li>
+                        <li><strong>The Deep Context Dump:</strong> Upload a 50-page PDF or a codebase and ask "Summarize the architectural bottlenecks."</li>
+                        <li><strong>The Refinement Loop:</strong> Ask Claude to write a draft, then give it "vibes" feedback (e.g., "Make it more punchy").</li>
+                    </ol>
+                </div>
+                <div class="card">
+                    <h3>Perplexity: First 30 Mins</h3>
+                    <ol style="margin-left: 1.5rem; margin-top: 1rem;">
+                        <li><strong>Set the Focus:</strong> Use the "Focus" button to toggle between Web, Academic, or Social (Reddit).</li>
+                        <li><strong>The Rabbit Hole:</strong> Ask a broad question, then use the "Related" suggestions to dive deeper.</li>
+                        <li><strong>Verify Everything:</strong> Click the small numbers [1], [2] to jump directly to the source article.</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <section id="power-user">
+            <h2><i class="ph ph-lightning"></i> Power User Workflow: The AI Sandwich</h2>
+            <p>The "AI Sandwich" is a workflow where you use Perplexity to gather raw ingredients, Claude to cook the meal, and Perplexity again to plate it with citations.</p>
+            
+            <div class="mermaid">
+                graph LR
+                    A[Perplexity: Research & Sources] --> B[Claude: Synthesis & Logic]
+                    B --> C[Perplexity: Fact-Check & Update]
+                    style A fill:#10b981,color:#fff
+                    style B fill:#f59e0b,color:#fff
+                    style C fill:#10b981,color:#fff
+            </div>
+
+            <div class="callout tip">
+                <i class="ph ph-lightbulb"></i>
+                <div>
+                    <strong>Pro Tip:</strong> Copy the "Sources" list from Perplexity and paste it into Claude as "Reference Material" for hyper-accurate writing.
+                </div>
+            </div>
+        </section>
+
+        <section id="prompt-library">
+            <h2><i class="ph ph-terminal-window"></i> Prompt Library: Golden Templates</h2>
+            <div class="card-grid">
+                <div class="card prompt-card">
+                    <button class="copy-btn" onclick="copyPrompt('prompt1')">Copy</button>
+                    <h3>Deep Research (Perplexity)</h3>
+                    <div class="prompt-text" id="prompt1">Find the latest [Topic] trends for 2026. Focus on [Specific Niche]. Provide a list of the top 5 sources, summarize their main arguments, and identify any conflicting viewpoints between them.</div>
+                </div>
+                <div class="card prompt-card">
+                    <button class="copy-btn" onclick="copyPrompt('prompt2')">Copy</button>
+                    <h3>Code Debugging (Claude)</h3>
+                    <div class="prompt-text" id="prompt2">I am getting the following error: [Error Message]. Here is my code: [Code]. Analyze the logic, identify the root cause, and provide a refactored version that follows [Best Practice/Style Guide]. Explain why your solution is better.</div>
+                </div>
+                <div class="card prompt-card">
+                    <button class="copy-btn" onclick="copyPrompt('prompt3')">Copy</button>
+                    <h3>Creative Drafting (Claude)</h3>
+                    <div class="prompt-text" id="prompt3">Act as a world-class copywriter. Write a [Type of Content] for [Target Audience] about [Subject]. Use a [Tone] voice. Include a compelling hook, 3 value-driven sections, and a clear call to action. Avoid clichés.</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tool-switcher">
+            <h2><i class="ph ph-arrows-left-right"></i> Tool Switcher Guide</h2>
+            <div class="tool-switcher">
+                <h3>What do you need to do right now?</h3>
+                <div class="switcher-buttons">
+                    <button class="btn" onclick="switchTool('news')">Check Current News</button>
+                    <button class="btn" onclick="switchTool('code')">Debug Complex Code</button>
+                    <button class="btn" onclick="switchTool('essay')">Write a 2000-word Essay</button>
+                    <button class="btn" onclick="switchTool('facts')">Fact-Check a Claim</button>
+                    <button class="btn" onclick="switchTool('projects')">Organize Large Files</button>
+                </div>
+                <div id="switcher-result" style="margin-top: 2rem; font-weight: 600; font-size: 1.2rem;">
+                    Select an option above to see the best tool for the job.
+                </div>
+            </div>
+        </section>
+
+        <section id="spotlight">
+            <h2><i class="ph ph-star"></i> Feature Spotlight</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <h3 style="color: var(--accent-claude)">Claude: Artifacts & Projects</h3>
+                    <p><strong>Artifacts:</strong> A dedicated window for code, diagrams, and websites. It lets you iterate visually without re-reading the whole chat.</p>
+                    <p><strong>Projects:</strong> Upload your entire library of docs/code once. Claude will remember them across every conversation in that project.</p>
+                </div>
+                <div class="card">
+                    <h3 style="color: var(--accent-perplexity)">Perplexity: Collections & Pages</h3>
+                    <p><strong>Collections:</strong> Folders for your threads. You can set a "Custom Instruction" for each collection (e.g., "Always cite academic papers").</p>
+                    <p><strong>Pages:</strong> Convert a search thread into a beautiful, shareable report with headers, images, and embedded sources with one click.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="news">
+            <h2><i class="ph ph-newspaper"></i> Latest AI News (April 2026)</h2>
+            <div id="news-container" class="card-grid">
+                <!-- News items will be injected here -->
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
