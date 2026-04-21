@@ -1,114 +1,179 @@
-// Initialize Mermaid
-mermaid.initialize({ startOnLoad: true, theme: 'dark' });
-
-// Copy Prompt Function
-function copyPrompt(id) {
-    const text = document.getElementById(id).innerText;
-    navigator.clipboard.writeText(text).then(() => {
-        const btn = event.target;
-        const originalText = btn.innerText;
-        btn.innerText = 'Copied!';
-        btn.style.background = '#10b981';
-        setTimeout(() => {
-            btn.innerText = originalText;
-            btn.style.background = 'rgba(255, 255, 255, 0.1)';
-        }, 2000);
-    });
-}
-
-// Tool Switcher Logic
-const toolLogic = {
-    news: { tool: 'Perplexity', reason: 'Use Perplexity for real-time search and current events. Claude is limited by its knowledge cutoff.' },
-    code: { tool: 'Claude', reason: 'Claude Opus is the gold standard for complex coding, debugging, and architectural planning.' },
-    essay: { tool: 'Claude', reason: 'Claude excels at long-form writing, maintaining tone, and following complex stylistic instructions.' },
-    facts: { tool: 'Perplexity', reason: 'Perplexity provides direct citations for every claim, making it the best for fact-checking.' },
-    projects: { tool: 'Claude', reason: 'Claude Projects allow you to upload huge context files (200k+ tokens) that persist across chats.' }
+// Wiki Manifest - Hardcoded list of files since we are a static SPA
+const wikiManifest = {
+    "Getting Started": [
+        { title: "Intro Guide", path: "pages/intro.md", icon: "ph-house" },
+        { title: "Quick Reference", path: "pages/cheat-sheet.md", icon: "ph-lightning" }
+    ],
+    "Claude Desktop": [
+        { title: "Artifacts & Design", path: "pages/claude-desktop/artifacts.md", icon: "ph-palette" },
+        { title: "Projects & Knowledge", path: "pages/claude-desktop/projects.md", icon: "ph-books" },
+        { title: "Computer Use & Code", path: "pages/claude-desktop/claude-code.md", icon: "ph-terminal-window" },
+        { title: "MCP Connectivity", path: "pages/claude-desktop/mcp.md", icon: "ph-plugs-connected" },
+        { title: "Workflows", path: "pages/claude-desktop/workflows.md", icon: "ph-git-fork" }
+    ],
+    "Perplexity Desktop": [
+        { title: "Agentic Computer", path: "pages/perplexity-desktop/computer.md", icon: "ph-robot" },
+        { title: "Model Council", path: "pages/perplexity-desktop/model-council.md", icon: "ph-users-three" },
+        { title: "Collections", path: "pages/perplexity-desktop/collections.md", icon: "ph-folders" },
+        { title: "Pages & Publishing", path: "pages/perplexity-desktop/pages.md", icon: "ph-newspaper" }
+    ],
+    "Workflows": [
+        { title: "The AI Sandwich", path: "pages/workflows/ai-sandwich.md", icon: "ph-hamburger" },
+        { title: "Real-World Samples", path: "pages/workflows/use-cases.md", icon: "ph-briefcase" }
+    ]
 };
 
-function switchTool(type) {
-    const result = toolLogic[type];
-    const resultDiv = document.getElementById('switcher-result');
-    const accent = result.tool === 'Claude' ? 'var(--accent-claude)' : 'var(--accent-perplexity)';
-    
-    resultDiv.innerHTML = `
-        <div style="color: ${accent}; font-size: 1.5rem; margin-bottom: 0.5rem;">Use ${result.tool}</div>
-        <div style="font-weight: 400; font-size: 1rem; color: var(--text-muted);">${result.reason}</div>
-    `;
+// Global State
+let currentPath = "";
+const tagsMap = new Set();
 
-    // Highlight active button
-    document.querySelectorAll('.switcher-buttons .btn').forEach(btn => btn.classList.remove('active'));
-    event.target.classList.add('active');
+// Initialize
+function init() {
+    renderSidebar();
+    handleRouting();
+    window.addEventListener('hashchange', handleRouting);
+    setupSearch();
 }
 
-// News Data (Pre-fetched during build)
-const newsData = [
-    {
-        title: "Claude Opus 4.7 Released",
-        desc: "Anthropic's latest flagship model features enhanced vision, task budgets for agents, and a new 'xhigh' effort level for complex coding tasks.",
-        tag: "Claude",
-        date: "April 16, 2026"
-    },
-    {
-        title: "Perplexity 'Personal Computer' Update",
-        desc: "Perplexity now acts as a local agent on Mac, capable of organizing files, drafting emails, and orchestrating 19+ different AI models.",
-        tag: "Perplexity",
-        date: "April 17, 2026"
-    },
-    {
-        title: "Agentic Workflows Surge",
-        desc: "AI industry shifts from simple chat to agentic systems that autonomously execute multi-step tasks. Google & Nvidia announce new inference chips.",
-        tag: "Industry",
-        date: "April 19, 2026"
+// Render Sidebar
+function renderSidebar() {
+    const navContent = document.getElementById('nav-content');
+    navContent.innerHTML = '';
+
+    for (const [group, items] of Object.entries(wikiManifest)) {
+        const groupDiv = document.createElement('div');
+        groupDiv.className = 'nav-group';
+        groupDiv.innerHTML = `<h5>${group}</h5>`;
+
+        items.forEach(item => {
+            const link = document.createElement('a');
+            link.className = 'nav-item';
+            link.href = `#${item.path}`;
+            link.innerHTML = `<i class="ph ${item.icon}"></i> <span>${item.title}</span>`;
+            groupDiv.appendChild(link);
+        });
+
+        navContent.appendChild(groupDiv);
     }
-];
+}
 
-function renderNews() {
-    const container = document.getElementById('news-container');
-    newsData.forEach(item => {
-        const accent = item.tag === 'Claude' ? 'var(--accent-claude)' : (item.tag === 'Perplexity' ? 'var(--accent-perplexity)' : 'var(--text-muted)');
-        const card = document.createElement('div');
-        card.className = 'card';
-        card.innerHTML = `
-            <div style="color: ${accent}; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; margin-bottom: 0.5rem;">${item.tag} • ${item.date}</div>
-            <h3>${item.title}</h3>
-            <p style="font-size: 0.95rem; margin-top: 1rem;">${item.desc}</p>
-        `;
-        container.appendChild(card);
+// Handle Routing
+function handleRouting() {
+    const hash = window.location.hash.slice(1);
+    const defaultPage = "pages/intro.md";
+    const path = hash || defaultPage;
+    
+    loadPage(path);
+    updateActiveNavItem(path);
+}
+
+// Load Markdown Page
+async function loadPage(path) {
+    const viewer = document.getElementById('markdown-viewer');
+    const breadcrumb = document.getElementById('breadcrumb');
+    
+    viewer.innerHTML = `<div class="loading"><i class="ph ph-circle-notch ph-spin"></i> <span>Synchronizing Knowledge...</span></div>`;
+
+    try {
+        const response = await fetch(path);
+        if (!response.ok) throw new Error('Page not found');
+        let markdown = await response.text();
+
+        // Extract Frontmatter Tags
+        const tagsMatch = markdown.match(/tags: \[(.*?)\]/);
+        if (tagsMatch) {
+            const tags = tagsMatch[1].split(',').map(t => t.trim().replace('#', ''));
+            renderTags(tags);
+            markdown = markdown.replace(/---[\s\S]*?---/, ''); // Remove frontmatter
+        }
+
+        // Render Markdown
+        viewer.innerHTML = marked.parse(markdown);
+        
+        // Update Breadcrumb
+        const fileName = path.split('/').pop().replace('.md', '');
+        breadcrumb.innerText = `Home / ${fileName.replace(/-/g, ' ')}`;
+
+        // Re-initialize any dynamic elements (Mermaid, Copy buttons)
+        initDynamicElements();
+
+    } catch (err) {
+        viewer.innerHTML = `<div class="error-view">
+            <i class="ph ph-warning-circle"></i>
+            <h2>Page Not Found</h2>
+            <p>The guide you are looking for has been moved or archived.</p>
+            <a href="#pages/intro.md" class="btn">Return Home</a>
+        </div>`;
+    }
+}
+
+// Render Tags in Right Panel
+function renderTags(tags) {
+    const tagCloud = document.getElementById('tag-cloud');
+    tagCloud.innerHTML = '';
+    tags.forEach(tag => {
+        const tagEl = document.createElement('span');
+        tagEl.className = 'tag';
+        tagEl.innerText = `#${tag}`;
+        tagEl.onclick = () => {
+            document.getElementById('search-input').value = tag;
+            setupSearch();
+        };
+        tagCloud.appendChild(tagEl);
     });
 }
 
-// Scroll Reveal & Active Nav
-const observerOptions = { threshold: 0.2 };
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            updateNav(entry.target.id);
-        }
-    });
-}, observerOptions);
-
-function updateNav(id) {
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${id}`) {
-            link.classList.add('active');
+// Update Active Sidebar Item
+function updateActiveNavItem(path) {
+    document.querySelectorAll('.nav-item').forEach(item => {
+        item.classList.remove('active');
+        if (item.getAttribute('href') === `#${path}`) {
+            item.classList.add('active');
         }
     });
 }
 
-document.querySelectorAll('section').forEach(section => observer.observe(section));
+// Search Logic
+function setupSearch() {
+    const input = document.getElementById('search-input');
+    input.addEventListener('input', (e) => {
+        const term = e.target.value.toLowerCase();
+        document.querySelectorAll('.nav-item').forEach(item => {
+            const text = item.innerText.toLowerCase();
+            const isVisible = text.includes(term);
+            item.style.display = isVisible ? 'flex' : 'none';
+        });
 
-// Initial Render
-renderNews();
-
-// Smooth Scroll for Nav Links
-document.querySelectorAll('.nav-links a').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-        document.querySelector(targetId).scrollIntoView({
-            behavior: 'smooth'
+        // Hide empty groups
+        document.querySelectorAll('.nav-group').forEach(group => {
+            const hasVisibleItems = Array.from(group.querySelectorAll('.nav-item')).some(item => item.style.display !== 'none');
+            group.style.display = hasVisibleItems ? 'block' : 'none';
         });
     });
-});
+}
+
+// Dynamic Elements (Copy Buttons, Mermaid)
+function initDynamicElements() {
+    // Add copy buttons to pre/code blocks
+    document.querySelectorAll('pre').forEach(block => {
+        const btn = document.createElement('button');
+        btn.className = 'copy-btn-md';
+        btn.innerHTML = '<i class="ph ph-copy"></i>';
+        btn.onclick = () => {
+            const text = block.innerText;
+            navigator.clipboard.writeText(text);
+            btn.innerHTML = '<i class="ph ph-check"></i>';
+            setTimeout(() => btn.innerHTML = '<i class="ph ph-copy"></i>', 2000);
+        };
+        block.style.position = 'relative';
+        block.appendChild(btn);
+    });
+
+    // Mermaid init if needed
+    if (window.mermaid && document.querySelector('.mermaid')) {
+        mermaid.init();
+    }
+}
+
+// Start
+init();
