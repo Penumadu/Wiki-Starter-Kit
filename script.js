@@ -33,6 +33,21 @@ function init() {
     handleRouting();
     window.addEventListener('hashchange', handleRouting);
     setupSearch();
+    setupMobileToggle();
+}
+
+// Mobile Toggle Logic
+function setupMobileToggle() {
+    const toggle = document.getElementById('mobile-toggle');
+    const sidebar = document.getElementById('sidebar');
+    if (toggle && sidebar) {
+        toggle.addEventListener('click', () => {
+            sidebar.classList.toggle('open');
+            const icon = toggle.querySelector('i');
+            icon.classList.toggle('ph-list');
+            icon.classList.toggle('ph-x');
+        });
+    }
 }
 
 // Render Sidebar
