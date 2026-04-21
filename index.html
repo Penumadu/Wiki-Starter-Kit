@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Wiki Navigator | Claude & Perplexity</title>
+    <title>AI Schools | Learn Claude & Perplexity</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
@@ -12,69 +12,52 @@
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <!-- Mobile Toggle -->
+<body class="tutorial-layout">
     <button class="mobile-toggle" id="mobile-toggle"><i class="ph ph-list"></i></button>
 
     <nav id="sidebar">
         <div class="logo">
-            <i class="ph-fill ph-compass"></i>
-            <span>AI Navigator</span>
+            <i class="ph-fill ph-graduation-cap"></i>
+            <span>AI Schools</span>
         </div>
         
-        <div class="search-box">
-            <i class="ph ph-magnifying-glass"></i>
-            <input type="text" id="search-input" placeholder="Search guides or tags...">
+        <div class="progress-container">
+            <div class="progress-bar-bg">
+                <div id="progress-fill" class="progress-bar-fill" style="width: 0%"></div>
+            </div>
+            <span id="progress-text">0% Complete</span>
         </div>
 
         <div id="nav-content">
-            <!-- Dynamic Navigation will be injected here -->
-        </div>
-
-        <div class="sidebar-footer">
-            <div class="status-badge">
-                <span class="status-dot"></span> 2026 Live Updates
-            </div>
+            <!-- Curriculum will be injected here -->
         </div>
     </nav>
 
     <main id="content-area">
-        <div class="breadcrumb" id="breadcrumb">Home</div>
+        <div class="tutorial-header">
+            <div class="breadcrumb" id="breadcrumb">Course / Lesson</div>
+            <div class="nav-controls-top">
+                <button class="btn-nav prev" onclick="navigatePage(-1)"><i class="ph ph-caret-left"></i> Previous</button>
+                <button class="btn-nav next" onclick="navigatePage(1)">Next <i class="ph ph-caret-right"></i></button>
+            </div>
+        </div>
         
         <article id="markdown-viewer">
-            <!-- Markdown content will be rendered here -->
             <div class="loading">
                 <i class="ph ph-circle-notch ph-spin"></i>
-                <span>Loading Knowledge Base...</span>
+                <span>Loading Tutorial...</span>
             </div>
         </article>
 
+        <div class="nav-controls-bottom">
+            <button class="btn-nav prev" onclick="navigatePage(-1)"><i class="ph ph-caret-left"></i> Previous Lesson</button>
+            <button class="btn-nav next" onclick="navigatePage(1)">Next Lesson <i class="ph ph-caret-right"></i></button>
+        </div>
+
         <footer class="content-footer">
-            <div class="edit-link">
-                <i class="ph ph-github-logo"></i>
-                <a href="https://github.com/Penumadu/Wiki-Starter-Kit" target="_blank">Edit this page on GitHub</a>
-            </div>
+            <p>&copy; 2026 AI Schools. Learn the future of Claude and Perplexity.</p>
         </footer>
     </main>
-
-    <aside id="right-panel">
-        <div class="panel-section">
-            <h4>Quick Tags</h4>
-            <div class="tag-cloud" id="tag-cloud">
-                <!-- Tags will be injected here -->
-            </div>
-        </div>
-
-        <div class="panel-section">
-            <h4>Tool Switcher</h4>
-            <div class="mini-switcher">
-                <button class="switcher-item" onclick="location.hash='#cheat-sheet'">
-                    <i class="ph ph-arrows-left-right"></i>
-                    <span>Which tool?</span>
-                </button>
-            </div>
-        </div>
-    </aside>
 
     <script src="script.js"></script>
 </body>
