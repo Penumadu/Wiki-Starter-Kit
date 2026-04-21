@@ -1,22 +1,26 @@
-# Pages: Turning Searches into Articles
+---
+tags: [#Publishing, #Reporting, #Research]
+---
 
-**Summary:** Perplexity Pages allows you to instantly convert a messy, multi-turn research conversation into a clean, beautifully formatted wiki article.
+# Pages: Professional Publishing
+
+**Summary:** Pages turn your research threads into beautiful, shareable, and citation-dense articles or reports with one click.
 
 **The "Non-Tech" Translation:**
-Imagine you just spent an hour interrogating a detective about a case, asking dozens of fragmented questions. "Pages" is like hitting a magic button that takes all those notes and instantly writes a polished, published newspaper article summarizing the entire investigation.
+Think of Pages as your **"Personal Newspaper."** You do the investigating (searching), and with one tap, you have a front-page story ready for the world to read, complete with pictures and footnotes.
 
-### Context-Aware Recommendations
-Use Claude to write highly customized, creative content in a specific voice. But if you want to generate a heavily researched report *with citations built directly into the text*, Perplexity Pages is the fastest way to get from raw data to a published document.
+### Steps to Publish
 
-### Steps to Use Pages
-
-1. **Conduct Your Research:** Start a normal thread in Perplexity and ask your questions until you are satisfied with the findings.
-2. **Click "Convert to Page":** Look for the "Convert to Page" button at the top or bottom of your thread.
-3. **Review the Draft:** Perplexity will automatically generate a structured document with headers, bullet points, and embedded source links.
-4. **Publish or Share:** You can keep the page private, share the link with colleagues, or even publish it directly to the Perplexity discovery feed.
+1. **Research First:** Conduct a deep search or a multi-turn conversation.
+2. **Convert:** Click "Create Page." Perplexity will generate headers, sections, and even AI-generated images to match the topic.
+3. **Edit Layout:** You can drag and drop sections, add new headers, and even ask the AI to "Write an intro paragraph that is more professional."
+4. **Publish:** Set the page to "Public" or "Unlisted" and share the link.
 
 **The "Aha!" Moment:**
-Researching "The History of Quantum Computing" for 20 minutes, clicking one button, and suddenly having a gorgeous, shareable URL that looks like a professionally edited Wikipedia article.
+Converting a complex search about "2026 Housing Laws" into a clean, 5-minute read that you can text to a client in seconds.
+
+**Pro-Tip:**
+Pages now support **Live Embeds**. You can embed a Perplexity search block inside your page that updates automatically when new information becomes available.
 
 **Next Action:**
-Take any of your recent, long Perplexity search threads and click the "Convert to Page" button just to see what the output looks like.
+Turn your last research thread into a "Page" and try changing the layout of the headers.

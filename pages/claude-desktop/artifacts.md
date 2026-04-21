@@ -1,22 +1,29 @@
-# Artifacts: Visualizing Code and UI
+---
+tags: [#Design, #Productivity, #Collaboration]
+---
 
-**Summary:** Artifacts allow Claude to generate interactive code, documents, or diagrams in a dedicated side-panel rather than buried in the chat history.
+# Artifacts: From Code to Design
+
+**Summary:** Artifacts have evolved from simple code snippets into a full-scale collaborative canvas called "Claude Design" for prototypes, slides, and interactive apps.
 
 **The "Non-Tech" Translation:**
-Think of Artifacts like a digital whiteboard next to your conversation. Instead of Claude just telling you what a webpage looks like, it draws the webpage on the whiteboard so you can actually click it and see it working.
+Think of Artifacts like a "Magic Mirror." You talk to the mirror (Claude), and it instantly reflects back a finished product—a website, a slide deck, or a complex diagram—that you can actually touch and change in real-time.
 
-### Context-Aware Recommendations
-Use Claude's Artifacts when you are *creating* something new (like a React component or an SVG graphic). If you need to *find* an existing piece of code or documentation, Perplexity is better suited for the search.
+### 2026 Feature: Claude Design
+Claude Design allows you to create high-fidelity prototypes and one-pagers with one click. It now supports **Persistent Storage**, meaning your artifacts are saved automatically to your team's "Cowork" space for others to edit.
 
-### Steps to Use Artifacts
+### Steps to Mastery
 
-1. **Enable the Feature:** Ensure Artifacts are turned on in your Claude settings (usually on by default in 2026).
-2. **Give a Visual Prompt:** Ask Claude to create something visual. For example, "Create an interactive React dashboard for tracking my budget."
-3. **View the Whiteboard:** Watch as Claude opens a panel on the right side of your screen to render the live code.
-4. **Iterate:** Don't like the color? Just tell Claude in the chat, "Change the theme to dark mode," and watch the Artifact update instantly.
+1. **Trigger a Design:** Ask Claude: "Design a high-fidelity mobile landing page for a coffee subscription service."
+2. **Persistent Storage:** Note the "Save to Cowork" button at the top of the Artifact. This makes the design accessible to your whole team in their own Claude apps.
+3. **Live Iteration:** Highlight a specific part of the Artifact (like a button) and say: "Make this button glow on hover."
+4. **Export:** Use the "Export" menu to download the code as a React component or the slides as a PDF.
 
 **The "Aha!" Moment:**
-Asking Claude to build a fully functional "Pomodoro Timer" web app and being able to click "Start" directly inside the chat window without ever opening a code editor.
+Starting a project at 9:00 AM by asking Claude to "Design a strategy deck," and by 9:05 AM having a fully-formed, 10-slide interactive presentation ready for your team to review in their shared space.
+
+**Pro-Tip:**
+Use the `xhigh` effort level when asking Claude to design complex, multi-state interactive artifacts to ensure every transition is pixel-perfect.
 
 **Next Action:**
-Ask Claude to "Generate a Mermaid.js flowchart showing the process of making a cup of coffee" and watch the diagram appear in the Artifacts window.
+Ask Claude: "Design an interactive 2026 Roadmap slide for a tech company" and explore the new Claude Design layout.
