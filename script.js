@@ -8,23 +8,37 @@ const curriculum = [
     { id: "intro", title: "Welcome to AI Schools", path: "pages/intro.md", icon: "ph-house" },
     { id: "cheat-sheet", title: "Cheat Sheet: Which Tool?", path: "pages/cheat-sheet.md", icon: "ph-lightning" },
 
-    { type: "header", title: "Claude Desktop" },
+    { type: "header", title: "Claude Desktop Core" },
+    { id: "models", title: "Model Selection (Opus/Sonnet)", path: "pages/claude-desktop/models.md", icon: "ph-brain" },
     { id: "artifacts", title: "Artifacts & Claude Design", path: "pages/claude-desktop/artifacts.md", icon: "ph-palette" },
     { id: "projects", title: "Projects & Knowledge Base", path: "pages/claude-desktop/projects.md", icon: "ph-books" },
+    { id: "vision", title: "Vision & Image Analysis", path: "pages/claude-desktop/vision.md", icon: "ph-eye" },
+    { id: "custom-instructions", title: "System Prompts & Library", path: "pages/claude-desktop/custom-instructions.md", icon: "ph-faders" },
+
+    { type: "header", title: "Claude Advanced & Enterprise" },
     { id: "mcp", title: "MCP: Connecting Tools", path: "pages/claude-desktop/mcp.md", icon: "ph-plugs-connected" },
     { id: "claude-code", title: "Claude Code & Computer Use", path: "pages/claude-desktop/claude-code.md", icon: "ph-terminal-window" },
     { id: "workflows", title: "Workflows & Automation", path: "pages/claude-desktop/workflows.md", icon: "ph-git-fork" },
-    { id: "quiz-claude", title: "✅ Quiz: Claude 101", path: "pages/quiz-claude.md", icon: "ph-exam" },
+    { id: "team-enterprise", title: "Team & Enterprise Controls", path: "pages/claude-desktop/team-enterprise.md", icon: "ph-shield-check" },
+    { id: "api-tools", title: "API & Tool Use (Devs)", path: "pages/claude-desktop/api-tools.md", icon: "ph-code" },
+    { id: "quiz-claude", title: "✅ Quiz: Claude Mastery", path: "pages/quiz-claude.md", icon: "ph-exam" },
 
     { type: "header", title: "Perplexity Desktop" },
     { id: "pro-search", title: "Pro Search & Focus Modes", path: "pages/perplexity-desktop/pro-search.md", icon: "ph-magnifying-glass-plus" },
-    { id: "computer", title: "Perplexity Computer Agent", path: "pages/perplexity-desktop/computer.md", icon: "ph-robot" },
-    { id: "model-council", title: "Model Council", path: "pages/perplexity-desktop/model-council.md", icon: "ph-users-three" },
+    { id: "discover-feed", title: "The Discover Feed", path: "pages/perplexity-desktop/discover-feed.md", icon: "ph-newspaper-clipping" },
+    { id: "file-analysis", title: "File Uploads & Analysis", path: "pages/perplexity-desktop/file-analysis.md", icon: "ph-file-pdf" },
+    { id: "model-council", title: "Model Council (Consensus)", path: "pages/perplexity-desktop/model-council.md", icon: "ph-users-three" },
     { id: "collections", title: "Collections & Custom AI", path: "pages/perplexity-desktop/collections.md", icon: "ph-folders" },
-    { id: "ppages", title: "Pages & Publishing", path: "pages/perplexity-desktop/pages.md", icon: "ph-newspaper" },
+    { id: "ppages", title: "Pages & Publishing", path: "pages/perplexity-desktop/pages.md", icon: "ph-article" },
+
+    { type: "header", title: "Perplexity Advanced" },
+    { id: "computer", title: "Computer Agent & CFO", path: "pages/perplexity-desktop/computer.md", icon: "ph-robot" },
+    { id: "shopping", title: "Buy with Pro (Shopping)", path: "pages/perplexity-desktop/shopping.md", icon: "ph-shopping-cart" },
+    { id: "api-sonar", title: "Sonar API (Devs)", path: "pages/perplexity-desktop/api-sonar.md", icon: "ph-code" },
 
     { type: "header", title: "Mastery Workflows" },
     { id: "ai-sandwich", title: "The AI Sandwich Method", path: "pages/workflows/ai-sandwich.md", icon: "ph-hamburger" },
+    { id: "mobile-apps", title: "Mobile & Voice Workflows", path: "pages/workflows/mobile-apps.md", icon: "ph-device-mobile" },
     { id: "use-cases", title: "Real-World Use Cases", path: "pages/workflows/use-cases.md", icon: "ph-briefcase" },
 ];
 
