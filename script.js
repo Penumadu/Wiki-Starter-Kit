@@ -17,11 +17,17 @@ const curriculum = [
 
     { type: "header", title: "Claude Advanced & Enterprise" },
     { id: "mcp", title: "MCP: Connecting Tools", path: "pages/claude-desktop/mcp.md", icon: "ph-plugs-connected" },
-    { id: "claude-code", title: "Claude Code & Computer Use", path: "pages/claude-desktop/claude-code.md", icon: "ph-terminal-window" },
     { id: "workflows", title: "Workflows & Automation", path: "pages/claude-desktop/workflows.md", icon: "ph-git-fork" },
     { id: "team-enterprise", title: "Team & Enterprise Controls", path: "pages/claude-desktop/team-enterprise.md", icon: "ph-shield-check" },
     { id: "api-tools", title: "API & Tool Use (Devs)", path: "pages/claude-desktop/api-tools.md", icon: "ph-code" },
     { id: "quiz-claude", title: "✅ Quiz: Claude Mastery", path: "pages/quiz-claude.md", icon: "ph-exam" },
+
+    { type: "header", title: "Claude Code Mastery" },
+    { id: "code-intro", title: "Intro & IDE Setup", path: "pages/claude-code/intro-setup.md", icon: "ph-terminal-window" },
+    { id: "code-memory", title: "Auto-Memory & CLAUDE.md", path: "pages/claude-code/memory.md", icon: "ph-brain" },
+    { id: "code-skills", title: "Skills, Hooks & MCP", path: "pages/claude-code/skills-hooks.md", icon: "ph-anchor" },
+    { id: "code-auto", title: "CI/CD & Automation", path: "pages/claude-code/automation.md", icon: "ph-robot" },
+    { id: "code-platforms", title: "Agent SDK & Remote", path: "pages/claude-code/platforms.md", icon: "ph-devices" },
 
     { type: "header", title: "Perplexity Desktop" },
     { id: "pro-search", title: "Pro Search & Focus Modes", path: "pages/perplexity-desktop/pro-search.md", icon: "ph-magnifying-glass-plus" },
